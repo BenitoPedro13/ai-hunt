@@ -1,0 +1,97 @@
+.header {
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  overflow: visible;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+
+.headerContainer {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+  height: min-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px 15px 15px;
+  overflow: visible;
+  flex: 1 0 0px;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+  border-color: rgba(255, 255, 255, 0.25);
+  border-style: solid;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 0;
+  border-right-width: 0;
+}
+
+.logoContainer {
+  flex-shrink: 0;
+  width: min-content;
+  height: min-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: visible;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 11px;
+  border-radius: 0px 0px 0px 0px;
+}
+
+.logoText {
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  white-space: pre;
+  overflow: visible;
+  position: relative;
+  font-family: 'VCR OSD Mono Regular', monospace;
+  color: #ffffff;
+  font-size: 14.91px;
+  letter-spacing: 0em;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.menuOpenIcon {
+  flex-shrink: 0;
+  width: 34px;
+  height: 29px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+
+.menuBar {
+  width: 34px;
+  height: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  overflow: hidden;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  position: absolute;
+  border-radius: "0px 0px 0px 0px";
+}

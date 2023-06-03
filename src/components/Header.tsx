@@ -1,57 +1,47 @@
-'use client'
+import logo from "@/../public/logo.svg";
+import Image from "next/image";
+import Link from "next/link";
 
-import styles from '@/app/page.module.css';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
+import style from '@/style/header.module.css';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+	return (
+		<header
+      className={
+        style.header
+      }
+		>
+			<div
+				className={style.headerContainer}
+			>
+				<Link href="/">
+					<div
+						className={style.logoContainer}
+					>
+						<Image src={logo} width={33} height={33} alt="AI Hunt logo" />{" "}
+						<p
+							className={style.logoText}
+						>
+							AI HUNTER™
+						</p>
+					</div>
+				</Link>
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  return (
-    <header>
-      <div className={styles.container}>
-        <div className={styles.logo}>
-          <Link href='/'>
-            <Image src='/logo.svg' alt='Juicy Logo' width='142' height='32' />
-          </Link>
-        </div>
-        <div className={`${styles.menuMobile} ${isMenuOpen ? 'open' : ''}`}>
-          <div className={`${styles.hamburger}`} onClick={toggleMenu}>
-            <span className={styles.hamburgerSpan}></span>
-            <span className={styles.hamburgerSpan}></span>
-            <span className={styles.hamburgerSpan}></span>
-          </div>
-          {isMenuOpen &&
-            <nav className={`${styles.menuLinks}`}>
-              <ul>
-                <li>
-                  <Link href="/page1">
-                    Page 1
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/page2">
-                    Page 2
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/page3">
-                    Page 3
-                  </Link>
-                </li>
-                {/* Add more links here */}
-              </ul>
-            </nav>
-          }
-        </div>
-      </div>
-    </header>
-  );
+				<div
+					className={`menu open ${style.menuOpenIcon}`}
+				>
+					<div
+						className={style.menuBar}
+            style={{top: '6px'}}
+					></div>
+					<div
+						className={style.menuBar}
+            style={{bottom: '6px'}}
+					></div>
+				</div>
+			</div>
+		</header>
+	);
 };
 
 export default Header;
