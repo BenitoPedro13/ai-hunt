@@ -11,6 +11,8 @@
   align-content: center;
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
+  position: absolute;
+  width: 100%;
 }
 
 .headerContainer {
@@ -27,7 +29,7 @@
   flex: 1 0 0px;
   position: relative;
   align-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   border-radius: 0px 0px 0px 0px;
   border-color: rgba(255, 255, 255, 0.25);
   border-style: solid;
@@ -35,6 +37,13 @@
   border-bottom-width: 1px;
   border-left-width: 0;
   border-right-width: 0;
+}
+
+.headerFirstRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .logoContainer {
@@ -94,4 +103,38 @@
   gap: 10px;
   position: absolute;
   border-radius: "0px 0px 0px 0px";
+}
+
+.navbar {
+  width: 100%;
+  display: block;
+  margin-top: 32px;
+}
+
+.navLinks {
+  color: white;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: nowrap;
+  gap: 12px;
+}
+
+.navtext {
+  font-size: 14px;
+  font-family: 'VCR OSD Mono Regular', monospace;
+}
+
+.navLink {
+  height: 32px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'VCR OSD Mono Regular', monospace;
 }
