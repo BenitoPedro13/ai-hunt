@@ -6,6 +6,7 @@
   align-items: center;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  background-color: rgba(0,0,0,0.25);
   overflow: visible;
   padding: 0px 0px 0px 0px;
   align-content: center;
@@ -86,6 +87,7 @@
   overflow: hidden;
   position: relative;
   border-radius: 0px 0px 0px 0px;
+  cursor: pointer;
 }
 
 .menuBar {

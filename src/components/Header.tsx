@@ -44,7 +44,7 @@ const Header = () => {
 
   const headerContainerVariants = {
 		open: {
-			height: "200px",
+			height: "232px",
       display: 'flex',
       transition: { 
         type: 'spring',
