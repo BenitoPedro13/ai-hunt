@@ -11,6 +11,15 @@ import style from "@/style/header.module.css";
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
+	const headerBackdrop = {
+		open: {
+			z: 2,
+		},
+		closed: {
+			z: 1
+		},
+	};
+
 	const topBarVariants = {
 		open: {
 			rotate: 45,
@@ -55,7 +64,8 @@ const Header = () => {
 	};
 
 	return (
-		<header className={style.header}>
+		<motion.header className={style.header} variants={headerBackdrop}
+		animate={isOpen ? "open" : "closed"}>
 			<div className={style.headerContainer}>
 				<div className={style.headerFirstRow}>
 					<Link href="/">
@@ -100,7 +110,7 @@ const Header = () => {
           </ul>
 				</motion.nav>
 			</div>
-		</header>
+		</motion.header>
 	);
 };
 
