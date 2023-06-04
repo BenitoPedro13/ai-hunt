@@ -139,6 +139,38 @@ const Header = () => {
 		},
 	};
 
+	const navbarVariants = {
+		hidden: {
+			opacity: 0,
+			y: 50,
+		},
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				type: "spring",
+				stiffness: 50,
+				delayChildren: 0,
+				staggerChildren: 0.15
+			},
+		},
+	};
+
+	const navItemVariants = {
+		hidden: {
+			opacity: 0,
+			y: 20,
+		},
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				type: "spring",
+				stiffness: 50,
+			},
+		},
+	};
+
 	return (
 		<AnimatePresence>
 			<motion.header
@@ -163,102 +195,107 @@ const Header = () => {
 						</motion.div>
 
 						{windowSize.width >= 1200 ? (
-						<nav
-							className={style.navbar}
-						>
-							<ul className={style.navLinks}>
-								<p className={style.navtitle}>CHOOSE YOUR OUTPUT:</p>
-								<li className={style.navLink}>
-									<Link href="/">
-										<div className={style.logoContainer}>
-											<img
-												src="https://framerusercontent.com/images/IrRkK6UMiwiCPbqZcdyrw2rsWs.png"
-												width={31}
-												height={31}
-												alt="IMAGE"
-												className={style.navIcon}
-											/>{" "}
-											<p className={style.navLinkText}>IMAGE</p>
-										</div>
-									</Link>
-								</li>
-								<li className={style.navLink}>
-									<Link href="/">
-										<div className={style.logoContainer}>
-											<img
-												src="https://framerusercontent.com/images/mZRQDgJguK8TXKK0zai7UNWzis.png"
-												width={31}
-												height={31}
-												alt="TEXT"
-												className={style.navIcon}
-											/>{" "}
-											<p className={style.navLinkText}>TEXT</p>
-										</div>
-									</Link>
-								</li>
-								<li className={style.navLink}>
-									<Link href="/">
-										<div className={style.logoContainer}>
-											<img
-												src="https://framerusercontent.com/images/Ca0ol6OsxVxRYX2Nf3j5LHJa59s.png"
-												width={31}
-												height={31}
-												alt="VIDEO"
-												className={style.navIcon}
-											/>{" "}
-											<p className={style.navLinkText}>VIDEO</p>
-										</div>
-									</Link>
-								</li>
-								<li className={style.navLink}>
-									<Link href="/">
-										<div className={style.logoContainer}>
-											<img
-												src="https://framerusercontent.com/images/hI52EbofXYw6bkHESc4y0ZBIqHw.png"
-												width={31}
-												height={31}
-												alt="CODE"
-												className={style.navIcon}
-											/>{" "}
-											<p className={style.navLinkText}>CODE</p>
-										</div>
-									</Link>
-								</li>
-								<li className={style.navLink}>
-									<Link href="/">
-										<div className={style.logoContainer}>
-											<img
-												src="https://framerusercontent.com/images/kUevFsfAgGEFQAXVmlelYeFNhc.png"
-												width={31}
-												height={31}
-												alt="AUDIO"
-												className={style.navIcon}
-											/>{" "}
-											<p className={style.navLinkText}>AUDIO</p>
-										</div>
-									</Link>
-								</li>
-							</ul>
-						</nav>
-					) : (<motion.div
-							className={`menu open ${style.menuOpenIcon}`}
-							variants={menuVariant}
-							animate={isOpen ? "open" : "closed"}
-							onClick={() => setIsOpen(!isOpen)}
-						>
+							<nav className={style.navbar}>
+								<motion.ul
+									className={style.navLinks}
+									variants={navbarVariants}
+									initial="hidden"
+									animate="visible"
+								>
+									<motion.p className={style.navtitle} variants={navItemVariants}>CHOOSE YOUR OUTPUT:</motion.p>
+									<motion.li className={style.navLink} variants={navItemVariants}>
+										<Link href="/">
+											<div className={style.logoContainer}>
+												<img
+													src="https://framerusercontent.com/images/IrRkK6UMiwiCPbqZcdyrw2rsWs.png"
+													width={31}
+													height={31}
+													alt="IMAGE"
+													className={style.navIcon}
+												/>{" "}
+												<p className={style.navLinkText}>IMAGE</p>
+											</div>
+										</Link>
+									</motion.li>
+									<motion.li className={style.navLink} variants={navItemVariants}>
+										<Link href="/">
+											<div className={style.logoContainer}>
+												<img
+													src="https://framerusercontent.com/images/mZRQDgJguK8TXKK0zai7UNWzis.png"
+													width={31}
+													height={31}
+													alt="TEXT"
+													className={style.navIcon}
+												/>{" "}
+												<p className={style.navLinkText}>TEXT</p>
+											</div>
+										</Link>
+									</motion.li>
+									<motion.li className={style.navLink} variants={navItemVariants}>
+										<Link href="/">
+											<div className={style.logoContainer}>
+												<img
+													src="https://framerusercontent.com/images/Ca0ol6OsxVxRYX2Nf3j5LHJa59s.png"
+													width={31}
+													height={31}
+													alt="VIDEO"
+													className={style.navIcon}
+												/>{" "}
+												<p className={style.navLinkText}>VIDEO</p>
+											</div>
+										</Link>
+									</motion.li>
+									<motion.li className={style.navLink} variants={navItemVariants}>
+										<Link href="/">
+											<div className={style.logoContainer}>
+												<img
+													src="https://framerusercontent.com/images/hI52EbofXYw6bkHESc4y0ZBIqHw.png"
+													width={31}
+													height={31}
+													alt="CODE"
+													className={style.navIcon}
+												/>{" "}
+												<p className={style.navLinkText}>CODE</p>
+											</div>
+										</Link>
+									</motion.li>
+									<motion.li className={style.navLink} variants={navItemVariants}>
+										<Link href="/">
+											<div className={style.logoContainer}>
+												<img
+													src="https://framerusercontent.com/images/kUevFsfAgGEFQAXVmlelYeFNhc.png"
+													width={31}
+													height={31}
+													alt="AUDIO"
+													className={style.navIcon}
+												/>{" "}
+												<p className={style.navLinkText}>AUDIO</p>
+											</div>
+										</Link>
+									</motion.li>
+								</motion.ul>
+							</nav>
+						) : (
 							<motion.div
-								style={{ top: "6px" }}
-								className={style.menuBar}
-								variants={topBarVariants}
+								className={`menu open ${style.menuOpenIcon}`}
+								variants={menuVariant}
 								animate={isOpen ? "open" : "closed"}
-							></motion.div>
-							<motion.div
-								style={{ bottom: "6px" }}
-								className={style.menuBar}
-								variants={bottomBarVariants}
-								animate={isOpen ? "open" : "closed"}
-							></motion.div>
-						</motion.div>)}
+								onClick={() => setIsOpen(!isOpen)}
+							>
+								<motion.div
+									style={{ top: "6px" }}
+									className={style.menuBar}
+									variants={topBarVariants}
+									animate={isOpen ? "open" : "closed"}
+								></motion.div>
+								<motion.div
+									style={{ bottom: "6px" }}
+									className={style.menuBar}
+									variants={bottomBarVariants}
+									animate={isOpen ? "open" : "closed"}
+								></motion.div>
+							</motion.div>
+						)}
 					</div>
 
 					{windowSize.width >= 1200 ? null : (
