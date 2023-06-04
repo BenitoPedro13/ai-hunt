@@ -166,6 +166,12 @@
     padding: 24px 50px 24px 50px;
   }
 
+  .headerContainer:hover {
+    border-color: rgba(255, 255, 255, 1);
+    transition: all;
+    transition-duration: .8s;
+  }
+
   .menuOpenIcon {
     display: none !important;
   }
