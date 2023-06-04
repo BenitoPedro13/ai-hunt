@@ -11,8 +11,8 @@ import style from "@/style/header.module.css";
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [windowSize, setWindowSize] = useState({
-		width: window.innerWidth,
-		height: window.innerHeight,
+		width: 0,
+		height: 0,
 	});
 	const headerRef = useRef<HTMLDivElement>(null);
 
@@ -29,6 +29,11 @@ const Header = () => {
 				setIsOpen(false);
 			}
 		};
+
+		setWindowSize({
+			width: window.innerWidth,
+			height: window.innerHeight,
+		});
 
 		window.addEventListener("resize", handleResize);
 
