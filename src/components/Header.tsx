@@ -14,9 +14,61 @@ const Header = () => {
 	const headerBackdrop = {
 		open: {
 			z: 2,
+			height: "379px",
+			transition: {
+				type: "ease",
+				stiffness: 80,
+				// damping: 20
+			},
 		},
 		closed: {
-			z: 1
+			z: 1,
+			height: "62px",
+			transition: {
+				type: "ease",
+				stiffness: 80,
+				// damping: 20
+			},
+		},
+	};
+
+	const logoVariant = {
+		open: {
+			x: "calc(50vw - 15px - 131.34px/2)",
+			transition: {
+				type: "spring",
+				stiffness: 80,
+				// damping: 20
+			},
+		},
+		closed: {
+			x: 0,
+			transition: {
+				type: "spring",
+				stiffness: 40,
+				// damping: 20
+			},
+		},
+	};
+
+	const menuVariant = {
+		open: {
+			x: "calc((-50vw + 49px) - 17px)",
+			y: "50px",
+			transition: {
+				type: "spring",
+				stiffness: 80,
+				// damping: 20
+			},
+		},
+		closed: {
+			x: 0,
+			y: 0,
+			transition: {
+				type: "spring",
+				stiffness: 45,
+				// damping: 20
+			},
 		},
 	};
 
@@ -42,41 +94,31 @@ const Header = () => {
 		},
 	};
 
-  const headerContainerVariants = {
-		open: {
-			height: "232px",
-      display: 'flex',
-      transition: { 
-        type: 'spring',
-        stiffness: 80,
-        // damping: 20
-      }
-		},
-		closed: {
-      display: 'none',
-			height: "auto",
-      transition: { 
-        type: 'spring',
-        stiffness: 80,
-        // damping: 20
-      }
-		},
-	};
-
 	return (
-		<motion.header className={style.header} variants={headerBackdrop}
-		animate={isOpen ? "open" : "closed"}>
+		<motion.header
+			className={style.header}
+			variants={headerBackdrop}
+			animate={isOpen ? "open" : "closed"}
+		>
 			<div className={style.headerContainer}>
 				<div className={style.headerFirstRow}>
-					<Link href="/">
-						<div className={style.logoContainer}>
-							<Image src={logo} width={33} height={33} alt="AI Hunt logo" />{" "}
-							<p className={style.logoText}>AI HUNTER™</p>
-						</div>
-					</Link>
+					<motion.div
+						className={style.logoContainer}
+						variants={logoVariant}
+						animate={isOpen ? "open" : "closed"}
+					>
+						<Link href="/">
+							<div className={style.logoContainer}>
+								<Image src={logo} width={33} height={33} alt="AI Hunt logo" />{" "}
+								<p className={style.logoText}>AI HUNTER™</p>
+							</div>
+						</Link>
+					</motion.div>
 
-					<div
+					<motion.div
 						className={`menu open ${style.menuOpenIcon}`}
+						variants={menuVariant}
+						animate={isOpen ? "open" : "closed"}
 						onClick={() => setIsOpen(!isOpen)}
 					>
 						<motion.div
@@ -91,24 +133,22 @@ const Header = () => {
 							variants={bottomBarVariants}
 							animate={isOpen ? "open" : "closed"}
 						></motion.div>
-					</div>
+					</motion.div>
 				</div>
 
-				<motion.nav
-					variants={headerContainerVariants}
-					animate={isOpen ? "open" : "closed"}
-          initial={false}
-          className={style.navbar}
+				<nav
+					className={style.navbar}
+					style={isOpen ? { display: "block" } : { display: "none" }}
 				>
 					<ul className={style.navLinks}>
-            <p className={style.navtext}>CHOOSE YOUR OUTPUT:</p>
-            <li className={style.navLink}>IMAGE</li>
-            <li className={style.navLink}>TEXT</li>
-            <li className={style.navLink}>VIDEO</li>
-            <li className={style.navLink}>CODE</li>
-            <li className={style.navLink}>AUDIO</li>
-          </ul>
-				</motion.nav>
+						<p className={style.navtext}>CHOOSE YOUR OUTPUT:</p>
+						<li className={style.navLink}>IMAGE</li>
+						<li className={style.navLink}>TEXT</li>
+						<li className={style.navLink}>VIDEO</li>
+						<li className={style.navLink}>CODE</li>
+						<li className={style.navLink}>AUDIO</li>
+					</ul>
+				</nav>
 			</div>
 		</motion.header>
 	);
