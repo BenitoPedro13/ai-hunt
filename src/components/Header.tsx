@@ -10,7 +10,32 @@ import style from "@/style/header.module.css";
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	const [windowSize, setWindowSize] = useState({
+		width: window.innerWidth,
+		height: window.innerHeight,
+	});
 	const headerRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		const handleResize = () => {
+			const newWidth = window.innerWidth;
+
+			setWindowSize({
+				width: newWidth,
+				height: window.innerHeight,
+			});
+
+			if (newWidth > 1200) {
+				setIsOpen(false);
+			}
+		};
+
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
 
 	useEffect(() => {
 		const handleOutsideClick = (event: MouseEvent) => {
@@ -42,7 +67,7 @@ const Header = () => {
 		},
 		closed: {
 			z: 1,
-			height: "62px",
+			height: "63px",
 			background: "#00000040",
 			transition: {
 				type: "spring",
@@ -137,7 +162,85 @@ const Header = () => {
 							</Link>
 						</motion.div>
 
-						<motion.div
+						{windowSize.width >= 1200 ? (
+						<nav
+							className={style.navbar}
+						>
+							<ul className={style.navLinks}>
+								<p className={style.navtitle}>CHOOSE YOUR OUTPUT:</p>
+								<li className={style.navLink}>
+									<Link href="/">
+										<div className={style.logoContainer}>
+											<img
+												src="https://framerusercontent.com/images/IrRkK6UMiwiCPbqZcdyrw2rsWs.png"
+												width={31}
+												height={31}
+												alt="IMAGE"
+												className={style.navIcon}
+											/>{" "}
+											<p className={style.navLinkText}>IMAGE</p>
+										</div>
+									</Link>
+								</li>
+								<li className={style.navLink}>
+									<Link href="/">
+										<div className={style.logoContainer}>
+											<img
+												src="https://framerusercontent.com/images/mZRQDgJguK8TXKK0zai7UNWzis.png"
+												width={31}
+												height={31}
+												alt="TEXT"
+												className={style.navIcon}
+											/>{" "}
+											<p className={style.navLinkText}>TEXT</p>
+										</div>
+									</Link>
+								</li>
+								<li className={style.navLink}>
+									<Link href="/">
+										<div className={style.logoContainer}>
+											<img
+												src="https://framerusercontent.com/images/Ca0ol6OsxVxRYX2Nf3j5LHJa59s.png"
+												width={31}
+												height={31}
+												alt="VIDEO"
+												className={style.navIcon}
+											/>{" "}
+											<p className={style.navLinkText}>VIDEO</p>
+										</div>
+									</Link>
+								</li>
+								<li className={style.navLink}>
+									<Link href="/">
+										<div className={style.logoContainer}>
+											<img
+												src="https://framerusercontent.com/images/hI52EbofXYw6bkHESc4y0ZBIqHw.png"
+												width={31}
+												height={31}
+												alt="CODE"
+												className={style.navIcon}
+											/>{" "}
+											<p className={style.navLinkText}>CODE</p>
+										</div>
+									</Link>
+								</li>
+								<li className={style.navLink}>
+									<Link href="/">
+										<div className={style.logoContainer}>
+											<img
+												src="https://framerusercontent.com/images/kUevFsfAgGEFQAXVmlelYeFNhc.png"
+												width={31}
+												height={31}
+												alt="AUDIO"
+												className={style.navIcon}
+											/>{" "}
+											<p className={style.navLinkText}>AUDIO</p>
+										</div>
+									</Link>
+								</li>
+							</ul>
+						</nav>
+					) : (<motion.div
 							className={`menu open ${style.menuOpenIcon}`}
 							variants={menuVariant}
 							animate={isOpen ? "open" : "closed"}
@@ -155,87 +258,89 @@ const Header = () => {
 								variants={bottomBarVariants}
 								animate={isOpen ? "open" : "closed"}
 							></motion.div>
-						</motion.div>
+						</motion.div>)}
 					</div>
 
-					<nav
-						className={style.navbar}
-						style={isOpen ? { display: "block" } : { display: "none" }}
-					>
-						<ul className={style.navLinks}>
-							<p className={style.navtitle}>CHOOSE YOUR OUTPUT:</p>
-							<li className={style.navLink}>
-								<Link href="/">
-									<div className={style.logoContainer}>
-										<img
-											src="https://framerusercontent.com/images/IrRkK6UMiwiCPbqZcdyrw2rsWs.png"
-											width={31}
-											height={31}
-											alt="IMAGE"
-											className={style.navIcon}
-										/>{" "}
-										<p className={style.navLinkText}>IMAGE</p>
-									</div>
-								</Link>
-							</li>
-							<li className={style.navLink}>
-								<Link href="/">
-									<div className={style.logoContainer}>
-										<img
-											src="https://framerusercontent.com/images/mZRQDgJguK8TXKK0zai7UNWzis.png"
-											width={31}
-											height={31}
-											alt="TEXT"
-											className={style.navIcon}
-										/>{" "}
-										<p className={style.navLinkText}>TEXT</p>
-									</div>
-								</Link>
-							</li>
-							<li className={style.navLink}>
-								<Link href="/">
-									<div className={style.logoContainer}>
-										<img
-											src="https://framerusercontent.com/images/Ca0ol6OsxVxRYX2Nf3j5LHJa59s.png"
-											width={31}
-											height={31}
-											alt="VIDEO"
-											className={style.navIcon}
-										/>{" "}
-										<p className={style.navLinkText}>VIDEO</p>
-									</div>
-								</Link>
-							</li>
-							<li className={style.navLink}>
-								<Link href="/">
-									<div className={style.logoContainer}>
-										<img
-											src="https://framerusercontent.com/images/hI52EbofXYw6bkHESc4y0ZBIqHw.png"
-											width={31}
-											height={31}
-											alt="CODE"
-											className={style.navIcon}
-										/>{" "}
-										<p className={style.navLinkText}>CODE</p>
-									</div>
-								</Link>
-							</li>
-							<li className={style.navLink}>
-								<Link href="/">
-									<div className={style.logoContainer}>
-										<img
-											src="https://framerusercontent.com/images/kUevFsfAgGEFQAXVmlelYeFNhc.png"
-											width={31}
-											height={31}
-											alt="AUDIO"
-											className={style.navIcon}
-										/>{" "}
-										<p className={style.navLinkText}>AUDIO</p>
-									</div>
-								</Link>
-							</li>
-						</ul>
-					</nav>
+					{windowSize.width >= 1200 ? null : (
+						<nav
+							className={style.navbar}
+							style={isOpen ? { display: "block" } : { display: "none" }}
+						>
+							<ul className={style.navLinks}>
+								<p className={style.navtitle}>CHOOSE YOUR OUTPUT:</p>
+								<li className={style.navLink}>
+									<Link href="/">
+										<div className={style.logoContainer}>
+											<img
+												src="https://framerusercontent.com/images/IrRkK6UMiwiCPbqZcdyrw2rsWs.png"
+												width={31}
+												height={31}
+												alt="IMAGE"
+												className={style.navIcon}
+											/>{" "}
+											<p className={style.navLinkText}>IMAGE</p>
+										</div>
+									</Link>
+								</li>
+								<li className={style.navLink}>
+									<Link href="/">
+										<div className={style.logoContainer}>
+											<img
+												src="https://framerusercontent.com/images/mZRQDgJguK8TXKK0zai7UNWzis.png"
+												width={31}
+												height={31}
+												alt="TEXT"
+												className={style.navIcon}
+											/>{" "}
+											<p className={style.navLinkText}>TEXT</p>
+										</div>
+									</Link>
+								</li>
+								<li className={style.navLink}>
+									<Link href="/">
+										<div className={style.logoContainer}>
+											<img
+												src="https://framerusercontent.com/images/Ca0ol6OsxVxRYX2Nf3j5LHJa59s.png"
+												width={31}
+												height={31}
+												alt="VIDEO"
+												className={style.navIcon}
+											/>{" "}
+											<p className={style.navLinkText}>VIDEO</p>
+										</div>
+									</Link>
+								</li>
+								<li className={style.navLink}>
+									<Link href="/">
+										<div className={style.logoContainer}>
+											<img
+												src="https://framerusercontent.com/images/hI52EbofXYw6bkHESc4y0ZBIqHw.png"
+												width={31}
+												height={31}
+												alt="CODE"
+												className={style.navIcon}
+											/>{" "}
+											<p className={style.navLinkText}>CODE</p>
+										</div>
+									</Link>
+								</li>
+								<li className={style.navLink}>
+									<Link href="/">
+										<div className={style.logoContainer}>
+											<img
+												src="https://framerusercontent.com/images/kUevFsfAgGEFQAXVmlelYeFNhc.png"
+												width={31}
+												height={31}
+												alt="AUDIO"
+												className={style.navIcon}
+											/>{" "}
+											<p className={style.navLinkText}>AUDIO</p>
+										</div>
+									</Link>
+								</li>
+							</ul>
+						</nav>
+					)}
 				</div>
 			</motion.header>
 		</AnimatePresence>

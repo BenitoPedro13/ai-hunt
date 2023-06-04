@@ -156,3 +156,27 @@
 .navLink:hover .navLinkText {
   color: white;
 }
+
+@media (min-width: 1200px) {
+  .header {
+    height: 81px !important;
+  }
+
+  .headerContainer {
+    padding: 24px 50px 24px 50px;
+  }
+
+  .menuOpenIcon {
+    display: none !important;
+  }
+
+  .navbar {
+    margin-top: 0px;
+    width: fit-content;
+  }
+
+  .navLinks {
+    flex-direction: row;
+    gap: 32px;
+  }
+}
