@@ -16,7 +16,7 @@ const Header = () => {
 			z: 2,
 			height: "379px",
 			transition: {
-				type: "ease",
+				type: "spring",
 				stiffness: 80,
 				// damping: 20
 			},
@@ -25,8 +25,8 @@ const Header = () => {
 			z: 1,
 			height: "62px",
 			transition: {
-				type: "ease",
-				stiffness: 80,
+				type: "spring",
+				stiffness: 45,
 				// damping: 20
 			},
 		},
@@ -37,7 +37,7 @@ const Header = () => {
 			x: "calc(50vw - 15px - 131.34px/2)",
 			transition: {
 				type: "spring",
-				stiffness: 80,
+				stiffness: 70,
 				// damping: 20
 			},
 		},
@@ -57,7 +57,7 @@ const Header = () => {
 			y: "50px",
 			transition: {
 				type: "spring",
-				stiffness: 80,
+				stiffness: 70,
 				// damping: 20
 			},
 		},
@@ -66,7 +66,7 @@ const Header = () => {
 			y: 0,
 			transition: {
 				type: "spring",
-				stiffness: 45,
+				stiffness: 40,
 				// damping: 20
 			},
 		},
