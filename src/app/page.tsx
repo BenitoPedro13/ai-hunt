@@ -1,8 +1,11 @@
+import heroBg from '@/../public/hero-bg.jpeg';
+import Image from 'next/image';
+
 export default function Home() {
   return (
     <main>
-      <img
-        src="https://framerusercontent.com/images/ySFQvJc37OSkduwj8LSLG0cCXig.jpeg"
+      <Image
+        src={heroBg}
         alt="hero background image"
         style={{
           pointerEvents: "none",
@@ -16,6 +19,7 @@ export default function Home() {
           imageRendering: "auto",
           minHeight: "512px",
         }}
+        width={undefined}
         height="512"
       />
     </main>
