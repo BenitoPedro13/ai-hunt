@@ -7,6 +7,7 @@ specifiers:
   eslint: 8.41.0
   eslint-config-next: 13.4.4
   framer-motion: ^10.12.16
+  framer-motion-ticker: ^1.0.19
   next: 13.4.4
   react: 18.2.0
   react-dom: 18.2.0
@@ -19,6 +20,7 @@ dependencies:
   eslint: 8.41.0
   eslint-config-next: 13.4.4_opaykosi7ysrbskpnffskmbrki
   framer-motion: 10.12.16_biqbaboplfbrettd7655fr4n2y
+  framer-motion-ticker: 1.0.19_biqbaboplfbrettd7655fr4n2y
   next: 13.4.4_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -1146,6 +1148,15 @@ packages:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
     dependencies:
       is-callable: 1.2.7
+    dev: false
+
+  /framer-motion-ticker/1.0.19_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-7c0DaD3rc36TsTEysT3R0bQlChqJuYydbPFgAJDMHVrZrsw+h7oWU3y32ErK8Nm5/LT1TdQYGymL1+btwwUIcw==}
+    dependencies:
+      framer-motion: 10.12.16_biqbaboplfbrettd7655fr4n2y
+    transitivePeerDependencies:
+      - react
+      - react-dom
     dev: false
 
   /framer-motion/10.12.16_biqbaboplfbrettd7655fr4n2y:

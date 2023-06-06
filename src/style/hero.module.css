@@ -1,0 +1,207 @@
+.heroContainer {
+  flex-shrink: 0;
+  width: 100%;
+  height: 592px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.heroContent {
+  width: 100%;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 75px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  position: absolute;
+}
+
+.topRow {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+  overflow: hidden;
+  flex: 1 0 0px;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 42px;
+}
+
+.firstTopRow {
+  flex-shrink: 0;
+  width: 100%;
+  height: min-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: visible;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 40px;
+}
+
+.right {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  flex: 1 0 0px;
+  width: 100%;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 15px;
+  overflow: visible;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 10px;
+  z-index: 1;
+}
+
+.firstRightRow {
+  flex-shrink: 0;
+  width: 100%;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: visible;
+  flex: 1 0 0px;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.firstRightRowText {
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  white-space: pre;
+  position: relative;
+  font-family: 'VCR OSD Mono Regular', monospace;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0em;
+  line-height: 1.2;
+}
+
+.secondRightRowText {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  z-index: 1;
+  flex: 1 0 0px;
+  position: relative;
+  font-family: 'VCR OSD Mono Regular', monospace;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0em;
+  line-height: 1.2;
+}
+
+.rightTitle {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  flex: 1 0 0px;
+  position: relative;
+  font-family: 'VCR OSD Mono Regular', monospace;
+  font-size: 44px;
+  color: white;
+  letter-spacing: 0em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+.blue {
+  color: #1abcfe;
+}
+
+.orange {
+  color: #F24E1E;
+}
+
+.green {
+  color: #0ACF83;
+}
+
+.purple {
+  color: #A259FF;
+}
+
+.bottomRow {
+  flex-shrink: 0;
+  width: 100%;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  overflow: hidden;
+  flex: 1 0 0px;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.bottomRowText {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  z-index: 1;
+  flex: 1 0 0px;
+  position: relative;
+  font-family: 'VCR OSD Mono Regular', monospace;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.heroBg {
+  pointer-events: none;
+  user-select: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-position: center center;
+  object-fit: cover;
+  image-rendering: auto;
+  webkit-filter: brightness(0.32);
+  filter: brightness(0.32);
+  /* min-height: 512px; */
+}
+
